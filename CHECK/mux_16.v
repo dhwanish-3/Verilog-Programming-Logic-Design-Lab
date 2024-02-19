@@ -1,0 +1,23 @@
+module mux_16(input a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,input [0:3]s,output out);
+wire t1,t2,t3,t4;
+wire s1,s2,s3,s4;
+wire r1,r2,r3,r4;
+wire u1,u2,u3,u4;
+assign t1=a&~s[0]&~s[1]&~s[2]&~s[3];
+assign t2=b&~s[0]&~s[1]&~s[2]&s[3];
+assign t3=c&~s[0]&~s[1]&s[2]&~s[3];
+assign t4=d&~s[0]&~s[1]&s[2]&s[3];
+assign s1=e&~s[0]&s[1]&~s[2]&~s[3];
+assign s2=f&~s[0]&s[1]&~s[2]&s[3];
+assign s3=g&~s[0]&s[1]&s[2]&~s[3];
+assign s4=h&~s[0]&s[1]&s[2]&s[3];
+assign r1=i&s[0]&~s[1]&~s[2]&~s[3];
+assign r2=j&s[0]&~s[1]&~s[2]&s[3];
+assign r3=k&s[0]&~s[1]&s[2]&~s[3];
+assign r4=l&s[0]&~s[1]&s[2]&s[3];
+assign u1=m&s[0]&s[1]&~s[2]&~s[3];
+assign u2=n&s[0]&s[1]&~s[2]&s[3];
+assign u3=o&s[0]&s[1]&s[2]&~s[3];
+assign u4=p&s[0]&s[1]&s[2]&s[3];
+assign out=t1|t2|t3|t4|s1|s2|s3|s4|r1|r2|r3|r4|u1|u2|u3|u4;
+endmodule
